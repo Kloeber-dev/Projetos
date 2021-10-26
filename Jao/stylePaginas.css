@@ -379,7 +379,7 @@
 /* IMAGENS-ESCONDIDAS */
 #cMbHeader, #cMbSection, .imagensmobile {
     visibility: hidden;
-    position: fixed;
+    display: none;
     z-index: -100;
 }
 
@@ -664,13 +664,11 @@
         min-height: fit-content;
     }
 
-    h2.TituloPA{
-        transform: scale(0.4);
-    }
-
     main header.cIndex0, #TagMain article div, main#mainDisco div{
         background: transparent;
-        display: block;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
     }
     img#cMbHeader, #cMbSection, .imagensmobile{
         visibility: visible;
@@ -684,10 +682,6 @@
 @media(min-width: 481px) and (max-width:769px){
     .lTitulo, .ahTitulo, .paTitulo, .sTitulo, .cIndex0 {
         min-height: fit-content;
-    }
-
-    h2.TituloPA{
-        transform: scale(0.8);
     }
 
     main header.cIndex0, #TagMain article div{

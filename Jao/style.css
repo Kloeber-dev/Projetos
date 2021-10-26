@@ -5,16 +5,23 @@
 }
 
 body {
+    min-width: 20rem;
+    max-width: 100vw;
     font-family: 'Roboto', sans-serif;
     background-color: white;
 }
 
 /* HEADER---------------------------------- */
+header {
+    display: block;
+    width: 100%;
+}
+
 #idHeader {
     background-color: white;
     color: black;
     width: 100%;
-    height: 5rem;
+    height: 10vh;
     font-size: 1.5rem;
     display: flex;
     align-items: center;
@@ -26,6 +33,9 @@ body {
     z-index: 100;
     list-style: none;
     position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 #idHeader ul li {
@@ -40,11 +50,13 @@ body {
     text-decoration: none;
     text-align: center;
     background-color: white;
+    transition:  all .4s;
 }
 
 #idHeader ul ul {
     position: absolute;
     visibility: hidden;
+    display: block;
 }
 
 #idHeader ul li:hover ul {
@@ -57,9 +69,13 @@ body {
 }
 
 #idHeader ul ul li a:hover{
-    background-color: #6c6a6a;
+    background-color: #443636;
     color: white;
-    transition: 0.2s;
+    transition: all .4s;
+}
+
+#imageNoCheck {
+    display: none;
 }
 
 label[for="bt_menu"] {
@@ -158,9 +174,6 @@ h2{
 }
 
 /* TÍTULO PRIMEIRO ACÚSTICO */
-.TituloPA{
-    margin-left: 4rem;
-}
 
 /* TÍTULO BIOGRAFIA */
 h3.biog {
@@ -221,134 +234,14 @@ h3.biog, .cIndexImpar {
     text-decoration: none;
 }
 
-/* CONTATO-------------------- */
-.bodyContato{
-    height: 100vh;
-    min-width: 436px;
-}
-
-.mainContato {
-    display: flex;
-    background-color: #DDDDDD;
-    justify-content: center;
-}
-
-form {
-    position: relative;
-    margin:  3rem 8.437rem;
-    width: 100%;
-    color: white;
-    background-color: #262626;
-    border-radius: 7px;
-    display: flex;
-    justify-content: center;
-}
-
-input {
-    width: 100%;
-    color: black;
-    background-color: white;
-    height: 2rem;
-    border-style: none;
-    border-radius: 5px;
-}
-
-input[type="text"]{
-    width: 100%;
-}
-
-input[type="email"], textarea  {
-    width: 100%;
-}
-
-#contato span {
-    font-weight: 900;
-    font-style: normal;
-    letter-spacing: 0.395em;
-    line-height: 214%;
-    font-size: 2.25rem;
-    display: flex;
-    justify-content: center;
-}
-
-fieldset {
-    line-height: 200%;
-    border-style: none;
-    width: 80%;
-}
-
-fieldset#contato {
-    padding: 2rem;
-}
-
-.nomesobrenome fieldset {
-    width: 49%;
-}
-
-.nomesobrenome {
-    border: 4rem;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    line-height: 200%;
-}
-
-.avaliacaobotoes {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    border: 4rem;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: space-between;
-    line-height: 200%;
-}
-
-.avaliacao {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: space-evenly;
-    line-height: 200%;
-}
-
-input[type="reset"], input[type="submit"]{
-    color: black;
-    background-color: white;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 1.1rem;
-    line-height: 128.69%;
-    /* or 31px */
-    text-align: center;
-    box-shadow: 2px 5px 8px rgba(255, 255, 255, 0.25);
-    border-radius: 7.42857px;
-    width: 8rem;
-    height: 2.5rem;
-}
-
-input[type="reset"]:hover, input[type="submit"]:hover{
-    transition: 0.3s;
-    transform: scale(1.2);
-}
-
-::placeholder {
-    font-family: "Roboto", sans-serif;
-    padding-left: 1rem;
-}
-
 /* RESPONSIVIDADE-------------------- */
 
 @media(max-width: 900px) {
+    /* HEADER */
     label[for="bt_menu"]{
         display: block;
     }
+
     #bt_menu:checked ~ #idHeader{
         display: block;
         margin-left: 0;
@@ -410,50 +303,6 @@ input[type="reset"]:hover, input[type="submit"]:hover{
         text-align: justify;
     }
 
-    .TituloPA, div h2{
-        margin-left: 0rem;
-        transform: scale(0.8);
-    }
-
-    .nomesobrenome {
-        flex-direction: column;
-        flex-wrap: wrap;
-    }
-
-    textarea {
-        background: #FFFFFF;
-        border: 1px solid #000000;
-        border-radius: 10px; 
-        height: 13rem;
-        width: 100%;
-        padding-left: 20px;
-        padding-top: 10px;
-    }
-
-    input {
-        background: #FFFFFF;
-        border: 1px solid #000000;
-        border-radius: 10px; 
-        height: 2.5rem;
-        width: 100%;
-        padding-left: 20px;
-    }   
-    label {
-        font-size: clamp(1.4em, 1.25vw, 2em);
-    }
-    textarea:focus, input:focus, select:focus {
-        box-shadow: 0 0 0 0;
-        outline: 0;
-    } 
-
-    input[type="reset"], input[type="submit"]{
-        transform: scale(0.8);
-    }
-
-    .nomesobrenome fieldset {
-        width: 100%;
-    }
-
     .cIndexImpar, .cIndexPar{
         font-size: 0.9rem;
     }
@@ -464,6 +313,22 @@ input[type="reset"]:hover, input[type="submit"]:hover{
 }
 
 @media(min-width: 0px) and (max-width:769px) {
+    .FaixaImpar article {
+        margin: 0;
+    }
+}
+
+@media(min-width: 0px) and (max-width:769px) {
+    h2 {
+        padding: 0.3rem;
+        margin: 0;
+        width: 80%;
+    }
+
+    h2 img {
+        width: 100%;
+    }
+    
     div, .cIndex0 {
         height: fit-content;
         /* display: block; */
@@ -471,13 +336,9 @@ input[type="reset"]:hover, input[type="submit"]:hover{
     }
 
     div {
-        padding-bottom: 1rem;
+        padding: 1rem 0;
     }
 
-    h2.TituloPA {
-        transform: scale(0.4);
-        display: block;
-    }
 
     .cIndex0 h2 {
         font-size: 6rem;
@@ -520,7 +381,7 @@ input[type="reset"]:hover, input[type="submit"]:hover{
         margin: 0;
         height: fit-content;
         padding: 1rem 2rem 1rem 2rem;
-        width: 100vw;
+        width: 100%;
     }
 
     .cIndexImpar, .cIndexPar {
@@ -551,58 +412,6 @@ input[type="reset"]:hover, input[type="submit"]:hover{
         display: block;
         width: 90vw;
         align-self: center;
-    }
-
-    
-    .nomesobrenome {
-        flex-direction: column;
-        flex-wrap: wrap;
-    }
-
-    form {
-        position: relative;
-    }
-
-    .avaliacao, .avaliacaobotoes, .nomesobrenome {
-        width: 100%;
-    }
-
-    .avaliacaobotoes {
-        flex-wrap: wrap;
-    }
-
-    textarea {
-        background: #FFFFFF;
-        border: 1px solid #000000;
-        border-radius: 10px; 
-        height: 13rem;
-        width: 100%;
-        padding-left: 20px;
-        padding-top: 10px;
-    }
-
-    input {
-        background: #FFFFFF;
-        border: 1px solid #000000;
-        border-radius: 10px; 
-        height: 2.5rem;
-        width: 100%;
-        padding-left: 20px;
-    }   
-    label {
-        font-size: clamp(1.4em, 1.25vw, 2em);
-    }
-    textarea:focus, input:focus, select:focus {
-        box-shadow: 0 0 0 0;
-        outline: 0;
-    } 
-
-    input[type="reset"], input[type="submit"]{
-        transform: scale(0.8);
-    }
-
-    .nomesobrenome fieldset {
-        width: 100%;
     }
 
     #idFooter {
